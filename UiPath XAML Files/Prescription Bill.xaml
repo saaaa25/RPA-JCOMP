@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Prescription_Bill" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="944.8,4158.4" sap2010:WorkflowViewState.IdRef="Prescription_Bill_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Prescription_Bill" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="844,3986.4" sap2010:WorkflowViewState.IdRef="Prescription_Bill_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
@@ -73,10 +73,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prescription_Bill" sap:VirtualizedContainerService.HintSize="854.4,4093.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prescription_Bill" sap:VirtualizedContainerService.HintSize="854.4,3921.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="konda.satwika2020@vitstudent.ac.in" Name="email" />
       <Variable x:TypeArguments="x:String" Default="Vicky" Name="patient_name" />
@@ -96,20 +95,16 @@
       <Variable x:TypeArguments="x:Int32" Name="qty_2" />
       <Variable x:TypeArguments="x:Double" Name="subtotal" />
       <Variable x:TypeArguments="s:Int32[]" Name="qty_list" />
-      <Variable x:TypeArguments="x:Int32" Name="i">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="i" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="812.8,4000.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile Condition="[check = &quot;Yes&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="812.8,3828.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="777.6,3833.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="777.6,3661.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,30 +138,13 @@
               <InArgument x:TypeArguments="s:Int32[]">[{qty_1,qty_2}]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="736,303.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[qty_list]">
-            <ui:ForEach.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,178.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[item.ToString]" />
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEach.Body>
-          </ui:ForEach>
-          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="736,2171.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Kaviya sree R M\OneDrive\Documents\UiPath\RPA PROJECT\prescriptions\Prescription Prices.xlsx">
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="736,2342.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Kaviya sree R M\OneDrive\Documents\UiPath\RPA PROJECT\prescriptions\Prescription Prices.xlsx">
             <ui:ExcelApplicationScope.Body>
               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702.4,2061.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702.4,2232.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -268,22 +246,33 @@
                       </ActivityAction>
                     </ui:ForEachRow.Body>
                   </ui:ForEachRow>
-                  <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[word_path]" sap:VirtualizedContainerService.HintSize="660.8,790.4" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
+                  <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[word_path]" sap:VirtualizedContainerService.HintSize="660.8,961.6" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
                     <p:WordApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WordDocument">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,680.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,852" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[Environment.NewLine +&quot;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Total Amount: Rs.&quot;+total_amt.ToString]" />
-                          <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="C:\Users\Kaviya sree R M\OneDrive\Documents\UiPath\RPA PROJECT\prescriptions\Prescription.pdf" sap:VirtualizedContainerService.HintSize="433.6,111.2" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" />
-                          <p:WordReadText DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="433.6,85.6" sap2010:WorkflowViewState.IdRef="WordReadText_2" Text="[my_receipt]" />
-                          <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[&quot;ABC CHILDREN’S HOSPITAL&quot;+Environment.NewLine +&#xD;&#xA;&quot;Receipt&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;Prescription&quot;+&quot;&#x9;&quot;+&quot;Price per tablet/capsule&quot;+&quot;&#x9;&quot;+&quot;Weight of unit tablet/capsule(mg)&quot;  + &quot;      &quot; + &quot;Subtotal&quot;]" ReplaceAll="True" Search="[my_receipt]" />
+                          <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="510.4,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[Environment.NewLine +&quot;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Total Amount: Rs.&quot;+total_amt.ToString]" />
+                          <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="C:\Users\Kaviya sree R M\OneDrive\Documents\UiPath\RPA PROJECT\prescriptions\Prescription.pdf" sap:VirtualizedContainerService.HintSize="510.4,111.2" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" />
+                          <p:WordReadText DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="510.4,85.6" sap2010:WorkflowViewState.IdRef="WordReadText_2" Text="[my_receipt]" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,257.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="433.6,164.8" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[&quot;ABC CHILDREN’S HOSPITAL&quot;+Environment.NewLine +&#xA;&quot;Receipt&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Prescription&quot;+&quot;&#x9;&quot;+&quot;Price per tablet/capsule&quot;+&quot;&#x9;&quot;+&quot;Weight of unit tablet/capsule(mg)&quot;  + &quot;      &quot; + &quot;Subtotal&quot;]" ReplaceAll="True" Search="[my_receipt]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
                         </Sequence>
                       </ActivityAction>
                     </p:WordApplicationScope.Body>
@@ -294,9 +283,6 @@
           </ui:ExcelApplicationScope>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
-      <ui:InterruptibleDoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="check = &quot;Yes&quot;" />
-      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
   </Sequence>
 </Activity>
