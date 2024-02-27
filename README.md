@@ -1,4 +1,4 @@
-# Streamlining Multi-Speciality Hospital Processes With Robotic Automation
+# Streamlining Multi-Speciality Hospital Processes With Robotic Process Automation
 This repository contains the code for automating hospital processes using Robotic Process Automation (RPA) with UiPath and a website for managing hospital activities.
 
 ## UiPath XAML Files
